@@ -1,0 +1,36 @@
+Case Study – RPG Login System
+
+Overview:
+This project demonstrates a simple Login System on IBM i (AS/400) using RPG, Display Files (DDS), SQL database tables, and CL program. It simulates a Domestic Flight Booking System login process.
+
+Files Included:
+
+LOGIN.rpgle – RPG program containing login logic.
+LOGIN.dspf – Display file for user login screen.
+RUNLOGIN.clp – CL program to compile and execute the system.
+create_tables.sql – SQL script to create necessary database tables.
+
+Database:
+
+LOGINPF: Stores login credentials (userId, password, role).
+USERMASTER: Stores detailed user information.
+PSNGRPF: Stores passenger information linked to a user.
+
+Process:
+
+User runs the program and sees the login screen.
+User enters User ID and Password.
+RPG program validates credentials against LOGINPF.
+If valid:
+	Admin → Route to Admin dashboard.
+	Airline → Route to Airline dashboard.
+	Customer → Route to Customer dashboard.
+If invalid, an error message is displayed until correct credentials are entered.
+
+Notes:
+
+This case study is for educational purposes only.
+Security and validations are simplified.
+Can be extended for Registration and Forgot Password features.
+
+Submitted as a case study project in RPG language.
