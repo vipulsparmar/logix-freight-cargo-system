@@ -32,7 +32,7 @@
      A            SRCDAT        10A  B 11 39COLOR(WHT) DSPATR(UL)
      A                                 13 10'Parcels / Packages (1-5):'
      A                                      COLOR(TRQ)
-     A            SRCPASS        1Y 0B 13 38EDTCDE(4) COLOR(WHT) DSPATR(UL)
+     A            SRCPASS        1A  B 13 38COLOR(WHT) DSPATR(UL)
      A            SRCMSG        60A  O 19 10DSPATR(HI) COLOR(RED)
      A                                 23  2'F3=Exit   F5=Clear'
      A                                      COLOR(BLU)
@@ -120,7 +120,8 @@
      A            CPSGND         1A  B 12 33COLOR(WHT) DSPATR(UL)
      A                                 13  6'Cargo Weight (Kg) . . . .:'
      A                                      COLOR(TRQ)
-     A            CPSGAG         2Y 0B 13 33EDTCDE(4) COLOR(WHT) DSPATR(UL)
+     A            CPSGAG         2Y 0B 13 33CHECK(RZ) EDTCDE(4) COLOR(WHT)
+     A                                      DSPATR(UL)
      A                                 14  6'Cargo Bay / Handling . . :'
      A                                      COLOR(TRQ)
      A            CPSRLT        10A  B 14 33COLOR(WHT) DSPATR(UL)

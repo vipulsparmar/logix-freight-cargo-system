@@ -47,7 +47,7 @@ dcl-s bookedBk  char(5) inz('');
 srcOrig = 'Pune';
 srcDest = 'Chennai';
 srcDat  = '2026-11-20';
-srcPass = 1;
+srcPass = '1';
 srcMsg  = 'Enter origin, destination hubs and press Enter to search.';
 
 dow not *in03 and not *in12;
@@ -57,11 +57,15 @@ dow not *in03 and not *in12;
     leave;
   endif;
 
+  if %trim(srcPass) = '';
+    srcPass = '1';
+  endif;
+
   if *in05;
     srcOrig = '';
     srcDest = '';
     srcDat  = '2026-11-20';
-    srcPass = 1;
+    srcPass = '1';
     srcMsg  = 'Search cleared.';
     iter;
   endif;

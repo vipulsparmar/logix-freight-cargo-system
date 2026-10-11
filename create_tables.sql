@@ -233,12 +233,18 @@ DELETE FROM DEVLIB.BOOKINGPF;
 INSERT INTO DEVLIB.BOOKINGPF
 (bkId, usrId, fltId, bkDate, bkDepDate, bkStatus, bkRemark) VALUES
 ('B0001', 'U0001', 'F0001', CURRENT DATE, '2026-11-20', 'U',
- 'Priority Freight');
+ 'Priority Freight'),
+('B0002', 'U0002', 'F0002', CURRENT DATE, '2026-11-22', 'U',
+ 'Surface Heavy'),
+('B0003', 'U0003', 'F0003', CURRENT DATE, '2026-11-25', 'U',
+ 'Express Cargo');
 
 DELETE FROM DEVLIB.TICKETPF;
 INSERT INTO DEVLIB.TICKETPF
 (tktId, bkId, psgId, tktSeatNum, tktStatus, tktRemark) VALUES
-('T0001', 'B0001', 'P0001', 50, 'U', 'Pallet Loaded');
+('T0001', 'B0001', 'P0001', 50, 'U', 'Pallet Loaded'),
+('T0002', 'B0002', 'P0003', 40, 'U', 'Container Bay'),
+('T0003', 'B0003', 'P0001', 25, 'U', 'Air Cargo Box');
 
 DELETE FROM DEVLIB.RATINGPF;
 INSERT INTO DEVLIB.RATINGPF
