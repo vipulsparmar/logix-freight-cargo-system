@@ -1,0 +1,134 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF08(08)
+     A          R SRCHSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 23'Search Freight Routes & Linehauls'
+     A                                      COLOR(YLW)
+     A                                  4  5'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  4 42'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  6  8'Enter Freight Dispatch Criteria:'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  8 10'From (Origin Cargo Hub) :'
+     A                                      COLOR(TRQ)
+     A            SRCORIG       15A  B  8 38COLOR(WHT) DSPATR(UL)
+     A                                  9 10'To (Destination Hub) . .:'
+     A                                      COLOR(TRQ)
+     A            SRCDEST       15A  B  9 38COLOR(WHT) DSPATR(UL)
+     A                                 11 10'Dispatch Date (YYYYMMDD):'
+     A                                      COLOR(TRQ)
+     A            SRCDAT         8Y 0B 11 38EDTCDE(Y) COLOR(WHT) DSPATR(UL)
+     A                                 13 10'Parcels / Packages (1-5):'
+     A                                      COLOR(TRQ)
+     A            SRCPASS        1Y 0B 13 38EDTCDE(4) COLOR(WHT) DSPATR(UL)
+     A            SRCMSG        60A  O 19 10DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F5=Clear'
+     A                                      COLOR(BLU)
+     A                                 23 25'Enter=Search Linehauls F12=Cancel'
+     A                                      COLOR(BLU)
+     A          R FLTSELSFL                 SFL
+     A            SFLOPT         1A  B  8  2COLOR(YLW) DSPATR(UL)
+     A            SFLFLT         5A  O  8  5DSPATR(HI) COLOR(WHT)
+     A            SFLAIR        12A  O  8 12COLOR(TRQ)
+     A            SFLTIME        8A  O  8 26COLOR(GRN)
+     A            SFLSEAT        3Y 0O  8 36EDTCDE(4) COLOR(GRN)
+     A            SFLFARE        5Y 0O  8 43EDTCDE(4) COLOR(YLW)
+     A            SFLRMK        10A  O  8 54COLOR(GRN)
+     A          R FLTSELCTL                 SFLCTL(FLTSELSFL)
+     A                                      SFLPAG(12)
+     A                                      SFLSIZ(13)
+     A  50                                  SFLDSP
+     A  51                                  SFLDSPCTL
+     A  52                                  SFLCLR
+     A  53                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 24'Select Available Linehaul'
+     A                                      COLOR(YLW)
+     A                                  4  5'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  4 42'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  6  2'Op Route   Carrier     '
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  6 26'Dep-Time Cap  Rate Remark'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  7  2'-- ------- ----------- '
+     A                                      COLOR(BLU)
+     A                                  7 26'-------- ---- ---- ------'
+     A                                      COLOR(BLU)
+     A          R SELFOOTER                 OVERLAY
+     A            SELMSG        60A  O 22  4DSPATR(HI) COLOR(RED)
+     A                                 23  2'1=Select Route F3=Exit'
+     A                                      COLOR(WHT)
+     A                                 23 26'F5=Refresh F12=Back'
+     A                                      COLOR(BLU)
+     A          R CNFSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 23'Confirm Consignment Booking'
+     A                                      COLOR(YLW)
+     A                                  4  5'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  4 42'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  5  6'Selected Linehaul . . . .:'
+     A                                      COLOR(TRQ)
+     A            CFLTID         5A  O  5 33DSPATR(HI) COLOR(WHT)
+     A                                  6  6'Carrier Transporter . . .:'
+     A                                      COLOR(TRQ)
+     A            CAIRNM        15A  O  6 33COLOR(WHT)
+     A                                  7  6'Freight Route . . . . . .:'
+     A                                      COLOR(TRQ)
+     A            CROUTE        30A  O  7 33COLOR(GRN)
+     A                                  8  6'Scheduled Dispatch Date .:'
+     A                                      COLOR(TRQ)
+     A            CTRVDT        10A  O  8 33COLOR(GRN)
+     A                                  9  6'Freight Rate (Per Kg) . .:'
+     A                                      COLOR(TRQ)
+     A            CFARE          6Y 0O  9 33EDTCDE(4) COLOR(YLW)
+     A                                 11  6'Consignee (Receiver Name):'
+     A                                      COLOR(TRQ)
+     A            CPSGNM        20A  B 11 33COLOR(WHT) DSPATR(UL)
+     A                                 12  6'Consignee Type (C=Corp) .:'
+     A                                      COLOR(TRQ)
+     A            CPSGND         1A  B 12 33COLOR(WHT) DSPATR(UL)
+     A                                 13  6'Cargo Weight (Kg) . . . .:'
+     A                                      COLOR(TRQ)
+     A            CPSGAG         2Y 0B 13 33EDTCDE(4) COLOR(WHT) DSPATR(UL)
+     A                                 14  6'Cargo Bay / Handling . . :'
+     A                                      COLOR(TRQ)
+     A            CPSRLT        10A  B 14 33COLOR(WHT) DSPATR(UL)
+     A                                 16  6'Total Freight Amount(INR):'
+     A                                      COLOR(TRQ)
+     A            CTOTFR         6Y 0O 16 33EDTCDE(4) DSPATR(HI) COLOR(YLW)
+     A            CNFMSG        60A  O 20  4DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F6=Confirm'
+     A                                      COLOR(BLU)
+     A                                 23 26'F8=Print Waybill F12=Back'
+     A                                      COLOR(BLU)

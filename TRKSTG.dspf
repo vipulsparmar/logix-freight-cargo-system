@@ -1,0 +1,74 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A                                      CF08(08)
+     A          R TRKSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 14'------ Live Consignment Tracking -
+     A                                      Timeline ------'
+     A                                      COLOR(YLW)
+     A                                  5  3'AWB / Waybill ID :'
+     A                                      COLOR(TRQ)
+     A            TAWB           5A  O  5 23DSPATR(HI) COLOR(WHT)
+     A                                  5 35'Linehaul Route :'
+     A                                      COLOR(TRQ)
+     A            TFLT           5A  O  5 52DSPATR(HI) COLOR(WHT)
+     A                                  6  3'Shipper Client   :'
+     A                                      COLOR(TRQ)
+     A            TSHPNM        20A  O  6 23COLOR(GRN)
+     A                                  6 45'Carrier Fleet  :'
+     A                                      COLOR(TRQ)
+     A            TAIRNM        15A  O  6 62COLOR(GRN)
+     A                                  7  3'Origin Hub Cargo :'
+     A                                      COLOR(TRQ)
+     A            TFROM         15A  O  7 23COLOR(WHT)
+     A                                  7 40'Destination Hub:'
+     A                                      COLOR(TRQ)
+     A            TTO           15A  O  7 57COLOR(WHT)
+     A                                  8  3'Cargo Gross Wt   :'
+     A                                      COLOR(TRQ)
+     A            TCGOWT         4Y 0O  8 23EDTCDE(4) COLOR(YLW)
+     A                                  8 28'Kg'
+     A                                      COLOR(YLW)
+     A                                  8 35'Dispatch Date  :'
+     A                                      COLOR(TRQ)
+     A            TDAT          10A  O  8 52COLOR(GRN)
+     A                                 10 14'------- TRANSIT MILESTONE STATUS -
+     A                                      -------'
+     A                                      COLOR(TRQ)
+     A                                 12  5'[X] STAGE 1: BOOKING CONFIRMED -
+     A                                      & MANIFESTED'
+     A                                      COLOR(GRN) DSPATR(HI)
+     A                                 13 11'Origin Terminal: Dock Bay 04 -
+     A                                      Tag Attached'
+     A                                      COLOR(BLU)
+     A                                 14  5'[X] STAGE 2: DOCK WEIGH-IN & -
+     A                                      SECURITY X-RAY PASSED'
+     A                                      COLOR(GRN) DSPATR(HI)
+     A                                 15 11'Status: Certified for Linehaul -
+     A                                      Loading'
+     A                                      COLOR(BLU)
+     A                                 16  5'[X] STAGE 3: LINEHAUL DEPARTED -
+     A                                      EN ROUTE'
+     A                                      COLOR(YLW) DSPATR(HI)
+     A                                 17 11'Status: Inter-Hub Transit via -
+     A                                      Heavy Fleet'
+     A                                      COLOR(BLU)
+     A                                 18  5'[ ] STAGE 4: ARRIVAL AT -
+     A                                      DESTINATION CARGO DOCK'
+     A                                      COLOR(BLU)
+     A                                 19  5'[ ] STAGE 5: OUT FOR DELIVERY -
+     A                                      & PROOF OF DELIVERY (POD)'
+     A                                      COLOR(BLU)
+     A            TMSG          60A  O 21  4DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F5=Refresh   F8=Print -
+     A                                      Waybill   F12=Back'
+     A                                      COLOR(BLU)

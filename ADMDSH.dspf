@@ -1,0 +1,55 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A          R ADMDSHSCR
+     A                                  1  2'User: Admin'
+     A                                      COLOR(YLW)
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 14'----------- Logistics Operations -
+     A                                      Dashboard -----------'
+     A                                      COLOR(TRQ)
+     A                                  6  5'Type Choice, Press Enter'
+     A                                      COLOR(BLU)
+     A                                  8 10'1.'
+     A                                      COLOR(WHT)
+     A                                  8 13'Manage Freight Carriers'
+     A                                      COLOR(GRN)
+     A                                  9 10'2.'
+     A                                      COLOR(WHT)
+     A                                  9 13'Manage Corporate Shippers'
+     A                                      COLOR(GRN)
+     A                                 10 10'3.'
+     A                                      COLOR(WHT)
+     A                                 10 13'View Consignments & Manifests'
+     A                                      COLOR(GRN)
+     A                                 11 10'4.'
+     A                                      COLOR(WHT)
+     A                                 11 13'View Freight Routes & Linehauls'
+     A                                      COLOR(GRN)
+     A                                 12 10'5.'
+     A                                      COLOR(WHT)
+     A                                 12 13'Manage Cargo Transit Claims'
+     A                                      COLOR(GRN)
+     A                                 13 10'6.'
+     A                                      COLOR(WHT)
+     A                                 13 13'Logistics Master Code Setup'
+     A                                      COLOR(GRN)
+     A                                 14 10'7.'
+     A                                      COLOR(WHT)
+     A                                 14 13'Change Password'
+     A                                      COLOR(GRN)
+     A                                 17 10'Enter Choice: '
+     A                                      COLOR(WHT) DSPATR(HI)
+     A            CHOICE         2Y 0B 17 25EDTCDE(4)
+     A                                      COLOR(YLW) DSPATR(UL)
+     A            MSGFLD        50A  O 20 10DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F5=Refresh   F12=Logout'
+     A                                      COLOR(BLU)

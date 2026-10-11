@@ -1,0 +1,60 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A          R REGISSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  3 19'---------- New Shipper -
+     A                                      Onboarding ----------'
+     A                                      COLOR(YLW)
+     A                                  5  3'Client Id:'
+     A                                      COLOR(TRQ)
+     A            DSPID          5A  O  5 13DSPATR(HI) COLOR(WHT)
+     A                                  7  3'Company :'
+     A                                      COLOR(TRQ)
+     A            DSPNAME       20A  B  7 13COLOR(WHT) DSPATR(UL)
+     A                                  7 36'RegDate :'
+     A                                      COLOR(TRQ)
+     A            DSPDOB         8Y 0B  7 46EDTCDE(Y) COLOR(WHT) DSPATR(UL)
+     A                                  7 58'(YYYY/MM/DD)'
+     A                                      COLOR(BLU)
+     A                                  9  3'Contact :'
+     A                                      COLOR(TRQ)
+     A            DSPMOB        10A  B  9 13COLOR(WHT) DSPATR(UL)
+     A                                  9 36'GST/Tax :'
+     A                                      COLOR(TRQ)
+     A            DSPAAD        12A  B  9 46COLOR(WHT) DSPATR(UL)
+     A                                 11  3'Email. .:'
+     A                                      COLOR(TRQ)
+     A            DSPEML        30A  B 11 13COLOR(WHT) DSPATR(UL)
+     A                                 11 46'Type. . :'
+     A                                      COLOR(TRQ)
+     A            DSPGND         1A  B 11 55COLOR(WHT) DSPATR(UL)
+     A                                 11 57'(C=Corp)'
+     A                                      COLOR(BLU)
+     A                                 13  3'Hub City:'
+     A                                      COLOR(TRQ)
+     A            DSPCTY        20A  B 13 13COLOR(WHT) DSPATR(UL)
+     A                                 13 36'Pincode :'
+     A                                      COLOR(TRQ)
+     A            DSPPIN         6Y 0B 13 46EDTCDE(4) COLOR(WHT) DSPATR(UL)
+     A                                 15  3'State. .:'
+     A                                      COLOR(TRQ)
+     A            DSPSTE        20A  B 15 13COLOR(WHT) DSPATR(UL)
+     A                                 15 35'(F4)'
+     A                                      COLOR(BLU)
+     A                                 17  3'Address :'
+     A                                      COLOR(TRQ)
+     A            DSPADD        60A  B 17 13COLOR(WHT) DSPATR(UL)
+     A                                 19  3'Password:'
+     A                                      COLOR(TRQ)
+     A            DSPPASS       20A  B 19 13DSPATR(ND)
+     A            MSGFLD        60A  O 21  3DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F4=Prompt   F5=Refresh -
+     A                                        F6=Register Shipper   F12=Cancel'
+     A                                      COLOR(BLU)

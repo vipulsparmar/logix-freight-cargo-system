@@ -1,0 +1,36 @@
+     A          R PASSHDR
+     A                                  2  4'========================'
+     A                                  2 28'========================'
+     A                                  3  4'| LOGIX FREIGHT LOGISTICS'
+     A                                  3 30'- CONSIGNMENT WAYBILL |'
+     A                                  4  4'|======================='
+     A                                  4 28'=======================|'
+     A                                  5  6'SHIPPER  : '
+     A            PRPASS        20A  O  5 18
+     A                                  5 40'AWB/TRK: '
+     A            PRBKID         5A  O  5 49
+     A                                  6  6'LINEHAUL : '
+     A            PRFLT          5A  O  6 18
+     A                                  6 28'CARRIER: '
+     A            PRAIR         15A  O  6 38
+     A                                  7  6'FROM HUB : '
+     A            PRFROM        15A  O  7 18
+     A                                  7 34'TO: '
+     A            PRTO          15A  O  7 39
+     A                                  8  6'DISPATCH : '
+     A            PRDATE        10A  O  8 18
+     A                                  8 30'WT-KG:'
+     A            PRSEAT         4A  O  8 37
+     A                                  8 42'PKG: '
+     A            PRTKT          5A  O  8 48
+     A                                  9  4'|-----------------------'
+     A                                  9 28'-----------------------|'
+     A                                 10  6'BAY: DOCK-04'
+     A                                 10 22'CLASS: EXPRESS'
+     A                                 10 38'STATUS: BOOKED'
+     A                                 11  6'BARCODE: ||| |||| | |||'
+     A                                 11 31'|||| | |||| ||||'
+     A                                 12  4'========================'
+     A                                 12 28'========================'
+     A                                 14  6'*** CARGO INSPECTION REQUIRED'
+     A                                 14 37' AT RECEIVING DOCK ***'

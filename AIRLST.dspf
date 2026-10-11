@@ -1,0 +1,96 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A          R AIRLSTSFL                 SFL
+     A            SFLOPT         1A  B  8  2COLOR(YLW) DSPATR(UL)
+     A            SFLID          5A  O  8  5DSPATR(HI) COLOR(WHT)
+     A            SFLNAME       18A  O  8 11COLOR(GRN)
+     A            SFLCITY       14A  O  8 30COLOR(GRN)
+     A            SFLFLEET       5Y 0O  8 46EDTCDE(4) COLOR(TRQ)
+     A            SFLRATE        3Y 2O  8 53EDTCDE(3) COLOR(YLW)
+     A            SFLSTAT        1A  O  8 59COLOR(WHT)
+     A            SFLRMK        10A  O  8 62COLOR(GRN)
+     A          R AIRLSTCTL                 SFLCTL(AIRLSTSFL)
+     A                                      SFLPAG(12)
+     A                                      SFLSIZ(13)
+     A  50                                  SFLDSP
+     A  51                                  SFLDSPCTL
+     A  52                                  SFLCLR
+     A  53                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 27'Freight Carriers Directory'
+     A                                      COLOR(YLW)
+     A                                  4  5'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  4 42'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  6  2'Op ID    Carrier Name      '
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  6 30'Hub City       Fleet  Rate '
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  6 59'St Remark'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  7  2'-- ----- ----------------- '
+     A                                      COLOR(BLU)
+     A                                  7 30'------------- ----- ----- '
+     A                                      COLOR(BLU)
+     A                                  7 59'-- ------'
+     A                                      COLOR(BLU)
+     A          R FOOTER                    OVERLAY
+     A            MSGFLD        60A  O 22  4DSPATR(HI) COLOR(RED)
+     A                                 23  2'2=Edit 4=Deactivate 5=View'
+     A                                      COLOR(WHT)
+     A                                 23 30'F3=Exit F5=Ref F6=Add F12=Bk'
+     A                                      COLOR(BLU)
+     A          R AIRDTLSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  3 28'Carrier Profile / Edit'
+     A                                      COLOR(YLW)
+     A                                  5  6'Carrier ID . . . . . :'
+     A                                      COLOR(TRQ)
+     A            DAIRID         5A  O  5 30DSPATR(HI) COLOR(WHT)
+     A                                  6  6'Carrier Name . . . . :'
+     A                                      COLOR(TRQ)
+     A            DAIRNM        20A  B  6 30COLOR(WHT) DSPATR(UL)
+     A                                  7  6'Dispatch Phone. . . .:'
+     A                                      COLOR(TRQ)
+     A            DMOB          10A  B  7 30COLOR(WHT) DSPATR(UL)
+     A                                  8  6'Operations Email. . .:'
+     A                                      COLOR(TRQ)
+     A            DEML          30A  B  8 30COLOR(WHT) DSPATR(UL)
+     A                                  9  6'Hub Terminal City. . :'
+     A                                      COLOR(TRQ)
+     A            DCTY          20A  B  9 30COLOR(WHT) DSPATR(UL)
+     A                                 10  6'State. . . . . . . . :'
+     A                                      COLOR(TRQ)
+     A            DSTE          20A  B 10 30COLOR(WHT) DSPATR(UL)
+     A                                 11  6'Fleet Vehicles. . . .:'
+     A                                      COLOR(TRQ)
+     A            DFLT           5Y 0B 11 30EDTCDE(4) COLOR(WHT) DSPATR(UL)
+     A                                 12  6'SLA Rating (e.g. 4.8):'
+     A                                      COLOR(TRQ)
+     A            DRATE          3Y 2B 12 30EDTCDE(3) COLOR(YLW) DSPATR(UL)
+     A                                 13  6'Status (A=Act, I=In):'
+     A                                      COLOR(TRQ)
+     A            DSTAT          1A  B 13 30COLOR(WHT) DSPATR(UL)
+     A                                 14  6'Carrier Remark . . . :'
+     A                                      COLOR(TRQ)
+     A            DRMK          15A  B 14 30COLOR(WHT) DSPATR(UL)
+     A            DMSG          60A  O 20  6DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F6=Save Carrier'
+     A                                      COLOR(BLU)
+     A                                 23 32'F12=Cancel'
+     A                                      COLOR(BLU)

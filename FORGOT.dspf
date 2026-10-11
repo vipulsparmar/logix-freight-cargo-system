@@ -1,0 +1,32 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A          R FORGOTSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  3 13'------------------- Forgot -
+     A                                      Password -------------------'
+     A                                      COLOR(YLW)
+     A                                  7 10'Login Id. . . . . . . . .:'
+     A                                      COLOR(TRQ)
+     A            LGNID          5A  B  7 38COLOR(WHT) DSPATR(UL)
+     A                                  9 10'Security Question. . . . :'
+     A                                      COLOR(TRQ)
+     A            SECQST        30A  O  9 38DSPATR(HI) COLOR(YLW)
+     A                                 11 10'Security Answer. . . . . :'
+     A                                      COLOR(TRQ)
+     A            SECANS        30A  B 11 38COLOR(WHT) DSPATR(UL)
+     A                                 13 10'New Password. . . . . . .:'
+     A                                      COLOR(TRQ)
+     A            NEWPSW        20A  B 13 38DSPATR(ND)
+     A                                 15 10'Confirm Password. . . . .:'
+     A                                      COLOR(TRQ)
+     A            CFMPSW        20A  B 15 38DSPATR(ND)
+     A            MSGFLD        60A  O 18 10DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F5=Refresh   F6=Change -
+     A                                      Password   F12=Cancel'
+     A                                      COLOR(BLU)

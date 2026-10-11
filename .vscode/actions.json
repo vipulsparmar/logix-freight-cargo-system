@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Deploy & Build Entire Project (build.sh)",
+    "command": "/QOpenSys/usr/bin/sh &WORKDIR/build.sh",
+    "environment": "pase",
+    "deployFirst": true
+  },
+  {
+    "name": "Deploy & Run Tables (SQL)",
+    "command": "system \"RUNSQLSTM SRCSTMF('&FULLPATH') COMMIT(*NONE)\"",
+    "type": "streamfile",
+    "extensions": ["sql"],
+    "environment": "ile",
+    "deployFirst": true
+  },
+  {
+    "name": "Deploy & Compile Current RPGLE File",
+    "command": "system \"CRTBNDRPG PGM(&CURLIB/&NAME) SRCSTMF('&FULLPATH') DFTACTGRP(*NO) ACTGRP(*CALLER) REPLACE(*YES)\"",
+    "type": "streamfile",
+    "extensions": ["rpgle"],
+    "environment": "ile",
+    "deployFirst": true
+  },
+  {
+    "name": "Deploy & Compile Current DSPF File",
+    "command": "system \"CPYFRMSTMF FROMSTMF('&FULLPATH') TOMBR('/QSYS.LIB/&CURLIB.LIB/QDDSSRC.FILE/&NAME.MBR') MBROPT(*REPLACE)\" && system \"CRTDSPF FILE(&CURLIB/&NAME) SRCFILE(&CURLIB/QDDSSRC) SRCMBR(&NAME) REPLACE(*YES) LVLCHK(*NO)\"",
+    "type": "streamfile",
+    "extensions": ["dspf"],
+    "environment": "pase",
+    "deployFirst": true
+  }
+]

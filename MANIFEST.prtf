@@ -1,0 +1,52 @@
+     A          R MNFHDR                    SPACEA(1)
+     A                                     2'================================'
+     A                                    34'================================'
+     A                                    66'============'
+     A                                    20'LOGIX DOMESTIC FREIGHT &'
+     A                                    44' CARGO SYSTEM'
+     A                                    24'DAILY LINEHAUL DISPATCH MANIFEST'
+     A                                     2'================================'
+     A                                    34'================================'
+     A                                    66'============'
+     A                                     2'LINEHAUL ID :'
+     A            MNFLT          5A  O    17
+     A                                    25'CARRIER :'
+     A            MNAIR         20A  O    35
+     A                                    58'DISPATCH :'
+     A            MNDAT         10A  O    69
+     A                                     2'ORIGIN HUB  :'
+     A            MNFROM        15A  O    17
+     A                                    35'DEST HUB:'
+     A            MNTO          15A  O    45
+     A                                    62'BAY: DOCK-04'
+     A                                     2'--------------------------------'
+     A                                    34'--------------------------------'
+     A                                    66'------------'
+     A                                     2'AWB ID   SHIPPER CLIENT        '
+     A                                    33'PKG   CARGO WT   STATUS   FREIGHT'
+     A                                     2'------   --------------------  '
+     A                                    33'---   --------   ------   -------'
+     A          R MNFDTL                    SPACEA(1)
+     A            MAWB           5A  O     2
+     A            MSHPNM        20A  O    11
+     A            MPKGS          3Y 0O    33EDTCDE(4)
+     A            MCGOWT         4Y 0O    39EDTCDE(4)
+     A                                    43'Kg'
+     A            MSTAT          1A  O    50
+     A            MFRT           7Y 0O    58EDTCDE(4)
+     A          R MNFTOT                    SPACEA(1)
+     A                                     2'--------------------------------'
+     A                                    34'--------------------------------'
+     A                                    66'------------'
+     A                                     2'TOTAL SHIPMENTS:'
+     A            MTOTSHP        4Y 0O    19EDTCDE(4)
+     A                                    26'TOTAL PAYLOAD:'
+     A            MTOTWT         5Y 0O    41EDTCDE(4)
+     A                                    47'Kg'
+     A                                    52'TOTAL INR:'
+     A            MTOTREV        8Y 0O    63EDTCDE(4)
+     A                                     2'DRIVER SIGNATURE: ______________'
+     A                                    36'____  DOCK SUPERVISOR: _________'
+     A                                     2'================================'
+     A                                    34'================================'
+     A                                    66'============'

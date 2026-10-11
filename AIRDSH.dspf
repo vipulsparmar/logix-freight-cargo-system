@@ -1,0 +1,48 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A          R AIRDSHSCR
+     A                                  1  2'Carrier:'
+     A                                      COLOR(GRN)
+     A            DSPNAME       18A  O  1 11DSPATR(HI) COLOR(WHT)
+     A                                  1 30'Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 14'------------- Carrier & Fleet -
+     A                                      Dashboard -------------'
+     A                                      COLOR(TRQ)
+     A                                  6  5'Type Choice, Press Enter'
+     A                                      COLOR(BLU)
+     A                                  8 10'1.'
+     A                                      COLOR(WHT)
+     A                                  8 13'Schedule Freight Linehauls'
+     A                                      COLOR(GRN)
+     A                                  9 10'2.'
+     A                                      COLOR(WHT)
+     A                                  9 13'View/Manage Freight Routes'
+     A                                      COLOR(GRN)
+     A                                 10 10'3.'
+     A                                      COLOR(WHT)
+     A                                 10 13'Manage Consignments & Cargo'
+     A                                      COLOR(GRN)
+     A                                 11 10'4.'
+     A                                      COLOR(WHT)
+     A                                 11 13'View/Update Carrier Profile'
+     A                                      COLOR(GRN)
+     A                                 12 10'5.'
+     A                                      COLOR(WHT)
+     A                                 12 13'Change Password'
+     A                                      COLOR(GRN)
+     A                                 15 10'Enter Choice: '
+     A                                      COLOR(WHT) DSPATR(HI)
+     A            CHOICE         2Y 0B 15 25EDTCDE(4)
+     A                                      COLOR(YLW) DSPATR(UL)
+     A            MSGFLD        50A  O 19 10DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F5=Refresh   F12=Logout'
+     A                                      COLOR(BLU)

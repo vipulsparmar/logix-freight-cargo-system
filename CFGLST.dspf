@@ -1,0 +1,71 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A          R CFGLSTSFL                 SFL
+     A            SFLOPT         1A  B  8  2COLOR(YLW) DSPATR(UL)
+     A            SFLCAT        10A  O  8  5DSPATR(HI) COLOR(WHT)
+     A            SFLTYPE       10A  O  8 17COLOR(TRQ)
+     A            SFLCODE       10A  O  8 30COLOR(YLW)
+     A            SFLDESC       30A  O  8 42COLOR(GRN)
+     A          R CFGLSTCTL                 SFLCTL(CFGLSTSFL)
+     A                                      SFLPAG(12)
+     A                                      SFLSIZ(13)
+     A  50                                  SFLDSP
+     A  51                                  SFLDSPCTL
+     A  52                                  SFLCLR
+     A  53                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 27'Logistics Master Lookups'
+     A                                      COLOR(YLW)
+     A                                  4  5'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  4 42'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  6  2'Op Category    Type        '
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  6 30'Code        Description'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  7  2'-- ----------  ----------  '
+     A                                      COLOR(BLU)
+     A                                  7 30'----------  ----------------'
+     A                                      COLOR(BLU)
+     A          R FOOTER                    OVERLAY
+     A            MSGFLD        60A  O 22  4DSPATR(HI) COLOR(RED)
+     A                                 23  2'2=Edit 4=Delete 5=View'
+     A                                      COLOR(WHT)
+     A                                 23 28'F3=Exit F5=Ref F6=Add F12=Bk'
+     A                                      COLOR(BLU)
+     A          R CFGDTLSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  3 26'Logistics Code Setup / Edit'
+     A                                      COLOR(YLW)
+     A                                  5  6'Lookup Category . . . .:'
+     A                                      COLOR(TRQ)
+     A            DCAT          10A  B  5 32COLOR(WHT) DSPATR(UL)
+     A                                  6  6'Lookup Type . . . . . .:'
+     A                                      COLOR(TRQ)
+     A            DTYPE         10A  B  6 32COLOR(WHT) DSPATR(UL)
+     A                                  7  6'Value / Short Code. . .:'
+     A                                      COLOR(TRQ)
+     A            DCODE         10A  B  7 32COLOR(WHT) DSPATR(UL)
+     A                                  8  6'Full Description. . . .:'
+     A                                      COLOR(TRQ)
+     A            DDESC         30A  B  8 32COLOR(WHT) DSPATR(UL)
+     A            DMSG          60A  O 20  6DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F6=Save Code'
+     A                                      COLOR(BLU)
+     A                                 23 30'F12=Cancel'
+     A                                      COLOR(BLU)

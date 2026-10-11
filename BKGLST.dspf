@@ -1,0 +1,84 @@
+     A                                      DSPSIZ(24 80 *DS4)
+     A                                      CA03(03)
+     A                                      CA12(12)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A          R BKGLSTSFL                 SFL
+     A            SFLOPT         1A  B  8  2COLOR(YLW) DSPATR(UL)
+     A            SFLBKID        5A  O  8  5DSPATR(HI) COLOR(WHT)
+     A            SFLUSRID       5A  O  8 12COLOR(GRN)
+     A            SFLFLTID       5A  O  8 19COLOR(TRQ)
+     A            SFLBKDAT      10A  O  8 26COLOR(GRN)
+     A            SFLDEPDT      10A  O  8 38COLOR(GRN)
+     A            SFLSTAT        1A  O  8 51COLOR(WHT)
+     A            SFLRMK        15A  O  8 55COLOR(GRN)
+     A          R BKGLSTCTL                 SFLCTL(BKGLSTSFL)
+     A                                      SFLPAG(12)
+     A                                      SFLSIZ(13)
+     A  50                                  SFLDSP
+     A  51                                  SFLDSPCTL
+     A  52                                  SFLCLR
+     A  53                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  1 65DATE EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  2 65TIME
+     A                                      COLOR(BLU)
+     A                                  3 24'Consignments & Freight Shipments'
+     A                                      COLOR(YLW)
+     A                                  4  5'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  4 42'----------------------------'
+     A                                      COLOR(BLU)
+     A                                  6  2'Op AWB-ID  Shippr Linehaul'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  6 26'Book-Date  Dispatch-Dt St'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  6 55'Remark'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  7  2'-- -----  ------ --------'
+     A                                      COLOR(BLU)
+     A                                  7 26'---------- ----------- --'
+     A                                      COLOR(BLU)
+     A                                  7 55'---------------'
+     A                                      COLOR(BLU)
+     A          R FOOTER                    OVERLAY
+     A            MSGFLD        60A  O 22  4DSPATR(HI) COLOR(RED)
+     A                                 23  2'2=Edit 4=Cancel 5=Track 6=Manifest'
+     A                                      COLOR(WHT)
+     A                                 23 42'F3=Exit F5=Ref F6=Add F12=Bk'
+     A                                      COLOR(BLU)
+     A          R BKGDTLSCR
+     A                                  1 25'Domestic Freight & Cargo System'
+     A                                      COLOR(TRQ)
+     A                                  2 38'LOGIX'
+     A                                      COLOR(WHT) DSPATR(HI)
+     A                                  3 27'Consignment Details / Edit'
+     A                                      COLOR(YLW)
+     A                                  5  6'Consignment / AWB ID. .:'
+     A                                      COLOR(TRQ)
+     A            DBKID          5A  O  5 30DSPATR(HI) COLOR(WHT)
+     A                                  6  6'Shipper Client ID . . .:'
+     A                                      COLOR(TRQ)
+     A            DUSRID         5A  B  6 30COLOR(WHT) DSPATR(UL)
+     A                                  7  6'Linehaul Route ID . . .:'
+     A                                      COLOR(TRQ)
+     A            DFLTID         5A  B  7 30COLOR(WHT) DSPATR(UL)
+     A                                 8  6'Dispatch Date (YMD) . .:'
+     A                                      COLOR(TRQ)
+     A            DTRVDT        10A  B  8 30COLOR(WHT) DSPATR(UL)
+     A                                  9  6'Shipment Status (U/C) .:'
+     A                                      COLOR(TRQ)
+     A            DSTAT          1A  B  9 30COLOR(WHT) DSPATR(UL)
+     A                                 10  6'Consignment Remark . . .:'
+     A                                      COLOR(TRQ)
+     A            DRMK          15A  B 10 30COLOR(WHT) DSPATR(UL)
+     A            DMSG          60A  O 20  6DSPATR(HI) COLOR(RED)
+     A                                 23  2'F3=Exit   F6=Save Consignment'
+     A                                      COLOR(BLU)
+     A                                 23 30'F12=Cancel'
+     A                                      COLOR(BLU)
