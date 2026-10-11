@@ -55,14 +55,21 @@ else;
 endif;
 
 mnDat = %char(%date(): *iso);
-write MNFHDR;
+
+// Default detail values
+mAwb   = 'N/A';
+mStat  = 'U';
+mShpNm = 'No Active Shipments';
+mPkgs  = 0;
+mCgoWt = 0;
+mFrt   = 0;
 
 // Loop Bookings for this Linehaul
 setll *loval BKGREC;
 read BKGREC;
 dow not %eof(BOOKINGPF);
   if fltId = targetFlt;
-    mAwb = bkId;
+    mAwb  = bkId;
     mStat = bkStatus;
 
     // Get Shipper Name
@@ -77,13 +84,13 @@ dow not %eof(BOOKINGPF);
     setll usrId PSGREC;
     reade usrId PSGREC;
     if not %eof(PSNGRPF);
-      mPkgs = 1;
+      mPkgs  = 1;
       mCgoWt = psgAge;
       if mCgoWt <= 0;
         mCgoWt = 25;
       endif;
     else;
-      mPkgs = 1;
+      mPkgs  = 1;
       mCgoWt = 25;
     endif;
 
@@ -95,11 +102,9 @@ dow not %eof(BOOKINGPF);
     endif;
     mFrt = lineFreight;
 
-    totCount += 1;
+    totCount  += 1;
     totWeight += mCgoWt;
-    totRev += lineFreight;
-
-    write MNFDTL;
+    totRev    += lineFreight;
   endif;
   read BKGREC;
 enddo;
@@ -108,7 +113,7 @@ enddo;
 mTotShp = totCount;
 mTotWt  = totWeight;
 mTotRev = totRev;
-write MNFTOT;
+write MNFHDR;
 
 *inlr = *on;
 return;
