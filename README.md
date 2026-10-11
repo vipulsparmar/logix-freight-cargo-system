@@ -78,6 +78,26 @@ All tables are defined in [`create_tables.sql`](file:///d:/projects/FLIGHT-BOOKI
 
 ---
 
+## Key Enterprise Logistics Features
+
+1. **Vibrant 5250 Color Architecture**:
+   * Uses high-contrast 5250 color standards: `COLOR(TRQ)` for system titles and field labels, `COLOR(WHT) DSPATR(HI)` for brand logos and selected values, `COLOR(YLW)` for screen subtitles and rates, `COLOR(GRN)` for data values, `COLOR(BLU)` for borders and function key footers, and `COLOR(RED) DSPATR(HI)` for alert banners.
+
+2. **Live 5-Stage Milestone Cargo Tracking (`TRKSTG`)**:
+   * Displays end-to-end consignment progression: `[BOOKED]` $\rightarrow$ `[HUB CONSOLIDATED]` $\rightarrow$ `[IN LINEHAUL TRANSIT]` $\rightarrow$ `[DESTINATION TERMINAL]` $\rightarrow$ `[OUT FOR DOCK DELIVERY]`.
+
+3. **Daily Linehaul Dispatch Manifest Report (`MANIFEST`)**:
+   * Generates formal printed dispatch manifests (PRTF) with linehaul header, carrier, active AWB details, cargo weights, and total linehaul freight revenues spooled to `WRKSPLF`.
+
+4. **Dynamic Tariff Engine & Payload Depletion (`CUSBKG`)**:
+   * Automatically calculates total freight tariffs with base rate per kg plus terminal dock handling fees (Rs. 150).
+   * Validates linehaul payload capacity in real-time, safely deducting booked cargo weights and rejecting bookings exceeding carrier limits.
+
+5. **Sanitized 5250 Data Entry**:
+   * Numeric input fields equipped with `CHECK(RZ)` and character validation to prevent hardware decimal validation exceptions (`CPF5002 / CPF5026`).
+
+---
+
 ## Deploy & Run via VS Code "Code for IBM i"
 
 1. Open VS Code with **Code for IBM i**.
@@ -91,3 +111,4 @@ All tables are defined in [`create_tables.sql`](file:///d:/projects/FLIGHT-BOOKI
 * **Logistics Controller / Admin:** `ADM01` / `admin`
 * **Carrier Representative (Blue Dart):** `A0001` / `air`
 * **Corporate Shipper (Tata Motors):** `U0001` / `user`
+
