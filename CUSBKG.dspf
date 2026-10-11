@@ -27,9 +27,9 @@
      A                                  9 10'To (Destination Hub) . .:'
      A                                      COLOR(TRQ)
      A            SRCDEST       15A  B  9 38COLOR(WHT) DSPATR(UL)
-     A                                 11 10'Dispatch Date (YYYYMMDD):'
+     A                                 11 10'Dispatch Date (YYYY-MM-DD):'
      A                                      COLOR(TRQ)
-     A            SRCDAT         8Y 0B 11 38EDTCDE(Y) COLOR(WHT) DSPATR(UL)
+     A            SRCDAT        10A  B 11 39COLOR(WHT) DSPATR(UL)
      A                                 13 10'Parcels / Packages (1-5):'
      A                                      COLOR(TRQ)
      A            SRCPASS        1Y 0B 13 38EDTCDE(4) COLOR(WHT) DSPATR(UL)

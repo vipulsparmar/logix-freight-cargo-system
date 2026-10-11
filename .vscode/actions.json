@@ -7,7 +7,7 @@
   },
   {
     "name": "Deploy & Run Tables (SQL)",
-    "command": "system \"RUNSQLSTM SRCSTMF('&FULLPATH') COMMIT(*NONE)\"",
+    "command": "system \"RUNSQLSTM SRCSTMF('&FULLPATH') COMMIT(*NONE) ERRLVL(35)\"",
     "type": "streamfile",
     "extensions": ["sql"],
     "environment": "ile",

@@ -21,7 +21,7 @@ system "CRTSRCPF FILE($TARGET_LIB/QCLSRC) RCDLEN(112)" 2>/dev/null
 
 # 2. Execute SQL Database Tables & Seed Data
 echo "[2/5] Creating Database Tables and Loading Seed Data..."
-system "RUNSQLSTM SRCSTMF('$DIR/create_tables.sql') COMMIT(*NONE)"
+system "RUNSQLSTM SRCSTMF('$DIR/create_tables.sql') COMMIT(*NONE) ERRLVL(35)"
 
 # 3. Copy Display Files & Printer Files to QDDSSRC and Compile
 echo "[3/5] Deploying & Compiling Display & Printer Files (DDS)..."

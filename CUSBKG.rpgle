@@ -46,7 +46,7 @@ dcl-s bookedBk  char(5) inz('');
 // Search screen default values
 srcOrig = 'Pune';
 srcDest = 'Chennai';
-srcDat  = 20261120;
+srcDat  = '2026-11-20';
 srcPass = 1;
 srcMsg  = 'Enter origin, destination hubs and press Enter to search.';
 
@@ -60,7 +60,7 @@ dow not *in03 and not *in12;
   if *in05;
     srcOrig = '';
     srcDest = '';
-    srcDat  = 20261120;
+    srcDat  = '2026-11-20';
     srcPass = 1;
     srcMsg  = 'Search cleared.';
     iter;
@@ -123,9 +123,9 @@ begsr LoadAvailableFlights;
   dow not %eof(FLIGHTPF);
     if fltStatus = 'A' and
        (%trim(srcOrig) = '' or
-        %lower(%trim(fltOrigin)) = %lower(%trim(srcOrig))) and
+        %scan(%lower(%trim(srcOrig)): %lower(%trim(fltOrigin))) > 0) and
        (%trim(srcDest) = '' or
-        %lower(%trim(fltDest)) = %lower(%trim(srcDest)));
+        %scan(%lower(%trim(srcDest)): %lower(%trim(fltDest))) > 0);
 
       chain airId AIRREC;
       if %found(AIRMASTER);
@@ -174,7 +174,7 @@ begsr BookingConfirmation;
   cFltId = selFltId;
   cAirNm = selAirNm;
   cRoute = %trim(fltOrigin) + ' -> ' + %trim(fltDest);
-  cTrvDt = '2026-11-20';
+  cTrvDt = srcDat;
   cFare  = fltTkPrice;
   cPsgNm = usrName;
   cPsgNd = 'C';
@@ -263,7 +263,12 @@ begsr BookingConfirmation;
       usrId     = inUser;
       fltId     = selFltId;
       bkDate    = %date();
-      bkDepDate = %date();
+      test(d e) *iso srcDat;
+      if not %error;
+        bkDepDate = %date(srcDat: *iso);
+      else;
+        bkDepDate = %date();
+      endif;
       bkStatus  = 'U';
       bkRemark  = 'Cargo Booked';
       write BKGREC;
