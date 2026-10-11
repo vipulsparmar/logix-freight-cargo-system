@@ -69,7 +69,7 @@ CREATE OR REPLACE TABLE DEVLIB.PSNGRPF (
     psgName     VARCHAR(20) NOT NULL,
     psgGender   CHAR(1)     DEFAULT 'C',
     psgAge      NUMERIC(2, 0) DEFAULT 1,
-    psgRltn     VARCHAR(10),
+    psgRltn     VARCHAR(15),
     PRIMARY KEY (psgId)
 );
 
@@ -91,7 +91,7 @@ CREATE OR REPLACE TABLE DEVLIB.FLIGHTPF (
     fltCabBag   NUMERIC(1, 0) DEFAULT 7,
     fltMainBag  NUMERIC(2, 0) DEFAULT 15,
     fltStatus   CHAR(1)       DEFAULT 'A',
-    fltRemark   VARCHAR(15),
+    fltRemark   VARCHAR(20),
     PRIMARY KEY (fltId)
 );
 
@@ -103,7 +103,7 @@ CREATE OR REPLACE TABLE DEVLIB.BOOKINGPF (
     bkDate      DATE,
     bkDepDate   DATE,
     bkStatus    CHAR(1)     DEFAULT 'U',
-    bkRemark    VARCHAR(15),
+    bkRemark    VARCHAR(20),
     PRIMARY KEY (bkId)
 );
 
@@ -211,7 +211,7 @@ INSERT INTO DEVLIB.PSNGRPF
 (psgId, usrId, psgName, psgGender, psgAge, psgRltn) VALUES
 ('P0001', 'U0001', 'Chennai Auto Plant', 'C', 1, 'Plant Dock'),
 ('P0002', 'U0001', 'Delhi Parts Hub', 'C', 1, 'Depot Hub'),
-('P0003', 'U0002', 'Kolkata DC Warehouse', 'C', 1, 'Wholesale DC');
+('P0003', 'U0002', 'Kolkata DC Warehouse', 'C', 1, 'Wholesale');
 
 DELETE FROM DEVLIB.FLIGHTPF;
 INSERT INTO DEVLIB.FLIGHTPF
@@ -224,7 +224,7 @@ INSERT INTO DEVLIB.FLIGHTPF
  'A', 'On-Time Express'),
 ('F0002', 'A0002', 1500, 20000, '20TR', 180, 'Mumbai', 'Delhi',
  45, '18:00:00', '06:00:00', '18:00:00', '12:00:00', 5, 20,
- 'A', 'Surface Linehaul'),
+ 'A', 'Surface Cargo'),
 ('F0003', 'A0004', 1200, 10000, '10TN', 120, 'Bangalore', 'Hyderabad',
  55, '15:30:00', '08:00:00', '15:30:00', '07:30:00', 5, 10,
  'A', 'Daily Dispatch');
@@ -233,7 +233,7 @@ DELETE FROM DEVLIB.BOOKINGPF;
 INSERT INTO DEVLIB.BOOKINGPF
 (bkId, usrId, fltId, bkDate, bkDepDate, bkStatus, bkRemark) VALUES
 ('B0001', 'U0001', 'F0001', CURRENT DATE, '2026-11-20', 'U',
- 'Priority Freight'),
+ 'Priority Cargo'),
 ('B0002', 'U0002', 'F0002', CURRENT DATE, '2026-11-22', 'U',
  'Surface Heavy'),
 ('B0003', 'U0003', 'F0003', CURRENT DATE, '2026-11-25', 'U',
