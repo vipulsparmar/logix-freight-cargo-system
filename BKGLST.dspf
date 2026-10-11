@@ -68,7 +68,7 @@
      A                                  7  6'Linehaul Route ID . . .:'
      A                                      COLOR(TRQ)
      A            DFLTID         5A  B  7 30COLOR(WHT) DSPATR(UL)
-     A                                 8  6'Dispatch Date (YMD) . .:'
+     A                                  8  6'Dispatch Date (YMD) . .:'
      A                                      COLOR(TRQ)
      A            DTRVDT        10A  B  8 30COLOR(WHT) DSPATR(UL)
      A                                  9  6'Shipment Status (U/C) .:'

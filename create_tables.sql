@@ -5,7 +5,7 @@
 -- =============================================================
 
 -- 1. CONTROLTBL - Logistics Hub & Code Lookups
-CREATE TABLE IF NOT EXISTS DEVLIB.CONTROLTBL (
+CREATE OR REPLACE TABLE DEVLIB.CONTROLTBL (
     keyField1   VARCHAR(10) NOT NULL,
     keyField2   VARCHAR(10) NOT NULL,
     valField    VARCHAR(10) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.CONTROLTBL (
 );
 
 -- 2. LOGINPF - User Credentials & Roles (Admin, Carrier, Shipper)
-CREATE TABLE IF NOT EXISTS DEVLIB.LOGINPF (
+CREATE OR REPLACE TABLE DEVLIB.LOGINPF (
     userId      CHAR(5)     NOT NULL,
     userPass    VARCHAR(20) NOT NULL,
     userRole    VARCHAR(10) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.LOGINPF (
 );
 
 -- 3. AIRMASTER - Freight Carriers & Fleet Operators
-CREATE TABLE IF NOT EXISTS DEVLIB.AIRMASTER (
+CREATE OR REPLACE TABLE DEVLIB.AIRMASTER (
     airId       CHAR(5)        NOT NULL,
     airName     VARCHAR(20)    NOT NULL,
     airMobNum   VARCHAR(10),
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.AIRMASTER (
 );
 
 -- 4. USERMASTER - Registered Corporate Clients / Shippers
-CREATE TABLE IF NOT EXISTS DEVLIB.USERMASTER (
+CREATE OR REPLACE TABLE DEVLIB.USERMASTER (
     usrId       CHAR(5)        NOT NULL,
     usrName     VARCHAR(20)    NOT NULL,
     usrDOB      DATE,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.USERMASTER (
 );
 
 -- 5. PSNGRPF - Consignees & Delivery Hubs
-CREATE TABLE IF NOT EXISTS DEVLIB.PSNGRPF (
+CREATE OR REPLACE TABLE DEVLIB.PSNGRPF (
     psgId       CHAR(5)     NOT NULL,
     usrId       CHAR(5)     NOT NULL,
     psgName     VARCHAR(20) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.PSNGRPF (
 );
 
 -- 6. FLIGHTPF - Freight Routes & Scheduled Linehauls
-CREATE TABLE IF NOT EXISTS DEVLIB.FLIGHTPF (
+CREATE OR REPLACE TABLE DEVLIB.FLIGHTPF (
     fltId       CHAR(5)       NOT NULL,
     airId       CHAR(5)       NOT NULL,
     fltRange    NUMERIC(5, 0),
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.FLIGHTPF (
 );
 
 -- 7. BOOKINGPF - Consignment Bookings / Shipments
-CREATE TABLE IF NOT EXISTS DEVLIB.BOOKINGPF (
+CREATE OR REPLACE TABLE DEVLIB.BOOKINGPF (
     bkId        CHAR(5)     NOT NULL,
     usrId       CHAR(5)     NOT NULL,
     fltId       CHAR(5)     NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.BOOKINGPF (
 );
 
 -- 8. TICKETPF - Cargo Parcels & Packages in Shipment
-CREATE TABLE IF NOT EXISTS DEVLIB.TICKETPF (
+CREATE OR REPLACE TABLE DEVLIB.TICKETPF (
     tktId       CHAR(5)       NOT NULL,
     bkId        CHAR(5)       NOT NULL,
     psgId       CHAR(5)       NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.TICKETPF (
 );
 
 -- 9. RATINGPF - Shipper SLA & Transporter Ratings
-CREATE TABLE IF NOT EXISTS DEVLIB.RATINGPF (
+CREATE OR REPLACE TABLE DEVLIB.RATINGPF (
     usrId       CHAR(5)       NOT NULL,
     fltId       CHAR(5)       NOT NULL,
     rating      NUMERIC(1, 0) NOT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS DEVLIB.RATINGPF (
 );
 
 -- 10. GRIEVPF - Cargo Damage & Transit Claims
-CREATE TABLE IF NOT EXISTS DEVLIB.GRIEVPF (
+CREATE OR REPLACE TABLE DEVLIB.GRIEVPF (
     grvId       CHAR(5)       NOT NULL,
     usrId       CHAR(5)       NOT NULL,
     fltId       CHAR(5)       NOT NULL,
